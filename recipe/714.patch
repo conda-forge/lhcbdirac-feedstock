@@ -1,0 +1,29 @@
+From c049ee09616d0dedc1bca1eaff855dc13cc1ab1a Mon Sep 17 00:00:00 2001
+From: Chris Burr <christopher.burr@cern.ch>
+Date: Fri, 2 Aug 2019 10:50:03 +0200
+Subject: [PATCH] Allow mixed case when getting input from the previous step
+
+---
+ LHCbDIRAC/Workflow/Modules/ModuleBase.py | 6 ++++++
+ 1 file changed, 6 insertions(+)
+
+diff --git a/LHCbDIRAC/Workflow/Modules/ModuleBase.py b/LHCbDIRAC/Workflow/Modules/ModuleBase.py
+index ba5d1cba7..bf47f416e 100644
+--- a/LHCbDIRAC/Workflow/Modules/ModuleBase.py
++++ b/LHCbDIRAC/Workflow/Modules/ModuleBase.py
+@@ -797,6 +797,12 @@ class ModuleBase(object):
+         except KeyError:
+           raise RuntimeError("Can't find output of step %s" % previousStep)
+ 
++      # outputDataName is always lower case but the job output can vary
++      # Fix it if the file only exists in the current directory with mixed case
++      filenameMap = {fn.lower(): fn for fn in os.listdir('.')}
++      stepInputData = [fn if fn in os.listdir('.') else filenameMap.get(fn, fn)
++                       for fn in stepInputData]
++
+       return stepInputData
+ 
+     return [x.strip('LFN:') for x in inputData.split(';')]
+-- 
+2.21.0
+
