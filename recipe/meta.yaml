@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://gitlab.cern.ch/lhcb-dirac/{{ name }}/-/archive/v{{ major }}r{{ minor }}p{{ patch }}/LHCbDIRAC-v{{ major }}r{{ minor }}p{{ patch }}.tar.gz
-  sha256: 95a7b6fb72734648e7ad628039785664adf32f3ce4065ac28266826a3d5f513c
+  sha256: 22a239781d654cb4a3f15c8de1b09cced34a6c7d43fd7b5ae7b474c81c4cd16e
   patches:
     - 714.patch
 
