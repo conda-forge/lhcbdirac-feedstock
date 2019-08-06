@@ -1,5 +1,5 @@
 {% set name = "LHCbDIRAC" %}
-{% set version = "9.3.4" %}
+{% set version = "9.3.9" %}
 {% set major, minor, patch = version.split(".") %}
 
 package:
@@ -9,11 +9,17 @@ package:
 source:
   url: https://gitlab.cern.ch/lhcb-dirac/{{ name }}/-/archive/v{{ major }}r{{ minor }}p{{ patch }}/LHCbDIRAC-v{{ major }}r{{ minor }}p{{ patch }}.tar.gz
   sha256: 95a7b6fb72734648e7ad628039785664adf32f3ce4065ac28266826a3d5f513c
+  patches:
+    - 714.patch
 
 build:
   noarch: python
   number: 0
-  script: "cp ${RECIPE_DIR}/setup.py . && {{ PYTHON }} -m pip install . --no-deps -vv"
+  script:
+    - cp ${RECIPE_DIR}/setup.py .
+    - {{ PYTHON }} -m pip install . --no-deps -vv
+    - mkdir -p ${CONDA_PREFIX}/scripts
+    - find LHCbDIRAC -wholename '*/scripts/*.py' -exec bash -c 'FN={} && NEW_FN=${CONDA_PREFIX}/scripts/$(basename ${FN} .py) && echo cp ${FN} ${NEW_FN} && chmod +x ${NEW_FN}' \;
 
 requirements:
   host:
@@ -21,7 +27,7 @@ requirements:
     - pip
   run:
     - python =2.7
-    - dirac-grid =6.21.5
+    - dirac-grid =6.21
     - lhcbdirac-config
     - voms
     - python-gfal2
