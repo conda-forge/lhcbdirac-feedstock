@@ -1,5 +1,5 @@
 {% set name = "LHCbDIRAC" %}
-{% set version = "9.3.9" %}
+{% set version = "9.4.1" %}
 {% set major, minor, patch = version.split(".") %}
 
 package:
@@ -27,7 +27,7 @@ requirements:
     - pip
   run:
     - python =2.7
-    - dirac-grid =6.21
+    - dirac-grid =6.22.6
     - lhcbdirac-config
     - voms
     - python-gfal2
