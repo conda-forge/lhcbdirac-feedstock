@@ -9,8 +9,6 @@ package:
 source:
   url: https://gitlab.cern.ch/lhcb-dirac/{{ name }}/-/archive/v{{ major }}r{{ minor }}p{{ patch }}/LHCbDIRAC-v{{ major }}r{{ minor }}p{{ patch }}.tar.gz
   sha256: 622167a0b445f6b4131b12fbdbc2339f17216c6a0d641e144c688cbd80e2e2ca
-  patches:
-    - 714.patch
 
 build:
   noarch: python
