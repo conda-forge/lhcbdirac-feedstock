@@ -26,5 +26,7 @@ setup(
     description='LHCbDIRAC is the Extension to DIRAC for the LHCb Experiment',
     install_requires=[
         'DIRAC',
+        'LbPlatformUtils',
+        'LbEnv',
     ],
 )
