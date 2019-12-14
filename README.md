@@ -1,28 +1,73 @@
-About lhcbdirac
-===============
+About xhyve
+===========
 
-Home: https://lhcb-dirac.readthedocs.io/
+Home: https://github.com/machyve/xhyve
 
-Package license: GPL-3.0
+Package license: BSD-2-Clause
 
 Feedstock license: BSD 3-Clause
 
-Summary: LHCbDIRAC is the Extension to DIRAC for the LHCb Experiment
+Summary: xhyve, a lightweight OS X virtualization solution
 
-DIRAC forms a layer between a particular community and various compute
-resources to allow optimized, transparent and reliable usage. LHCbDIRAC
-specializes DIRAC for LHCb.
+The [Hypervisor.framework](https://developer.apple.com/library/mac/releasenotes/MacOSX/WhatsNewInOSX/Articles/MacOSX10_10.html)
+user mode [virtualization](http://www.pagetable.com/?p=348) API introduced
+in Mac OS X 10.10 (Yosemite) cannot only be used for toy projects like the
+[hvdos](http://www.pagetable.com/?p=764) DOS Emulator, but is full-featured
+enough to support a full virtualization solution that can for example run
+Linux.
+
+[xhyve](https://github.com/mist64/xhyve) is a lightweight virtualization
+solution for OS X that is capable of running Linux. It is a port of
+FreeBSD’s [bhyve](http://bhyve.org/), a KVM+QEMU alternative written by
+Peter Grehan and Neel Natu.
 
 
 Current build status
 ====================
 
 
-<table><tr><td>All platforms:</td>
+<table>
+    
+  <tr>
+    <td>Azure</td>
     <td>
-      <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=6767&branchName=master">
-        <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/lhcbdirac-feedstock?branchName=master">
-      </a>
+      <details>
+        <summary>
+          <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=6767&branchName=master">
+            <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/lhcbdirac-feedstock?branchName=master">
+          </a>
+        </summary>
+        <table>
+          <thead><tr><th>Variant</th><th>Status</th></tr></thead>
+          <tbody><tr>
+              <td>osx</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=6767&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/lhcbdirac-feedstock?branchName=master&jobName=osx&configuration=osx_" alt="variant">
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </details>
+    </td>
+  </tr>
+  <tr>
+    <td>Linux</td>
+    <td>
+      <img src="https://img.shields.io/badge/linux-disabled-lightgrey.svg" alt="linux disabled">
+    </td>
+  </tr>
+  <tr>
+    <td>Windows</td>
+    <td>
+      <img src="https://img.shields.io/badge/Windows-disabled-lightgrey.svg" alt="Windows disabled">
+    </td>
+  </tr>
+  <tr>
+    <td>Linux_ppc64le</td>
+    <td>
+      <img src="https://img.shields.io/badge/ppc64le-disabled-lightgrey.svg" alt="ppc64le disabled">
     </td>
   </tr>
 </table>
@@ -32,27 +77,27 @@ Current release info
 
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
-| [![Conda Recipe](https://img.shields.io/badge/recipe-lhcbdirac-green.svg)](https://anaconda.org/conda-forge/lhcbdirac) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/lhcbdirac.svg)](https://anaconda.org/conda-forge/lhcbdirac) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/lhcbdirac.svg)](https://anaconda.org/conda-forge/lhcbdirac) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/lhcbdirac.svg)](https://anaconda.org/conda-forge/lhcbdirac) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-xhyve-green.svg)](https://anaconda.org/conda-forge/xhyve) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/xhyve.svg)](https://anaconda.org/conda-forge/xhyve) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/xhyve.svg)](https://anaconda.org/conda-forge/xhyve) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/xhyve.svg)](https://anaconda.org/conda-forge/xhyve) |
 
-Installing lhcbdirac
-====================
+Installing xhyve
+================
 
-Installing `lhcbdirac` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
+Installing `xhyve` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
 
 ```
 conda config --add channels conda-forge
 ```
 
-Once the `conda-forge` channel has been enabled, `lhcbdirac` can be installed with:
+Once the `conda-forge` channel has been enabled, `xhyve` can be installed with:
 
 ```
-conda install lhcbdirac
+conda install xhyve
 ```
 
-It is possible to list all of the versions of `lhcbdirac` available on your platform with:
+It is possible to list all of the versions of `xhyve` available on your platform with:
 
 ```
-conda search lhcbdirac --channel conda-forge
+conda search xhyve --channel conda-forge
 ```
 
 
@@ -70,7 +115,7 @@ A feedstock is made up of a conda recipe (the instructions on what and how to bu
 the package) and the necessary configurations for automatic building using freely
 available continuous integration services. Thanks to the awesome service provided by
 [CircleCI](https://circleci.com/), [AppVeyor](https://www.appveyor.com/)
-and [TravisCI](https://travis-ci.org/) it is possible to build and upload installable
+and [TravisCI](https://travis-ci.com/) it is possible to build and upload installable
 packages to the [conda-forge](https://anaconda.org/conda-forge)
 [Anaconda-Cloud](https://anaconda.org/) channel for Linux, Windows and OSX respectively.
 
@@ -94,17 +139,17 @@ Terminology
                   produce the finished article (built conda distributions)
 
 
-Updating lhcbdirac-feedstock
-============================
+Updating xhyve-feedstock
+========================
 
-If you would like to improve the lhcbdirac recipe or build a new
+If you would like to improve the xhyve recipe or build a new
 package version, please fork this repository and submit a PR. Upon submission,
 your changes will be run on the appropriate platforms to give the reviewer an
 opportunity to confirm that the changes result in a successful build. Once
 merged, the recipe will be re-built and uploaded automatically to the
 `conda-forge` channel, whereupon the built conda packages will be available for
 everybody to install and use from the `conda-forge` channel.
-Note that all branches in the conda-forge/lhcbdirac-feedstock are
+Note that all branches in the conda-forge/xhyve-feedstock are
 immediately built and any created packages are uploaded, so PRs should be based
 on branches in forks and branches in the main repository should only be used to
 build distinct package versions.
