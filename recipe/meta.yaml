@@ -1,5 +1,5 @@
 {% set name = "LHCbDIRAC" %}
-{% set version = "9.4.12" %}
+{% set version = "9.4.14" %}
 {% set major, minor, patch = version.split(".") %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://gitlab.cern.ch/lhcb-dirac/{{ name }}/-/archive/v{{ major }}r{{ minor }}p{{ patch }}/LHCbDIRAC-v{{ major }}r{{ minor }}p{{ patch }}.tar.gz
-  sha256: b50f2c18ad915e411be7f0fcb07e6628f10c620c337bfcd79271a38c9583900a
+  sha256: e36f207e1a9ffc820c01868420a06177f604c8ec87ed073285d01eec605b7e63
 
 build:
   noarch: python
