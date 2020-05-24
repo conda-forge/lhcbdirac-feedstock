@@ -1,6 +1,8 @@
 {% set name = "LHCbDIRAC" %}
-{% set version = "9.4.14" %}
-{% set major, minor, patch = version.split(".") %}
+{% set version = "10r0p1" %}
+{% set major = version.split('r')[0] %}
+{% set minor = version.split('r')[1].split('p')[0] %}
+{% set patch = version.split('p')[1] %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +10,7 @@ package:
 
 source:
   url: https://gitlab.cern.ch/lhcb-dirac/{{ name }}/-/archive/v{{ major }}r{{ minor }}p{{ patch }}/LHCbDIRAC-v{{ major }}r{{ minor }}p{{ patch }}.tar.gz
-  sha256: e36f207e1a9ffc820c01868420a06177f604c8ec87ed073285d01eec605b7e63
+  sha256: 7eadf83c1c707b3826e763c0946004ea5bad9808b0519618382f3b267dcc7023
 
 build:
   noarch: python
@@ -18,6 +20,7 @@ build:
     - {{ PYTHON }} -m pip install . --no-deps -vv
     - mkdir -p ${CONDA_PREFIX}/scripts
     - find LHCbDIRAC -wholename '*/scripts/*.py' -exec bash -xc 'FN={} && NEW_FN=${CONDA_PREFIX}/scripts/$(basename ${FN} .py) && echo cp ${FN} ${NEW_FN} && chmod +x ${NEW_FN}' \;
+    - find LHCbDIRAC -wholename '*/scripts/*.py' -exec bash -xc 'FN={} && NEW_FN=${CONDA_PREFIX}/bin/$(basename ${FN} .py) && echo cp ${FN} ${NEW_FN} && chmod +x ${NEW_FN}' \;
 
 requirements:
   host:
@@ -25,7 +28,7 @@ requirements:
     - pip
   run:
     - python =2.7
-    - dirac-grid =6.22
+    - dirac-grid =7.0
     - lhcbdirac-config
     - voms
     - python-gfal2
@@ -38,8 +41,7 @@ test:
 
 about:
   home: https://lhcb-dirac.readthedocs.io/
-  license: GPL-3.0
-  license_family: GPL
+  license: GPL-3.0-or-later
   license_file: LICENSE
   summary: 'LHCbDIRAC is the Extension to DIRAC for the LHCb Experiment'
   description: |
