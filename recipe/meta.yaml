@@ -6,7 +6,7 @@
 
 package:
   name: {{ name|lower }}
-  version: {{ version }}
+  version: {{ major }}.{{ minor }}.{{ patch }}
 
 source:
   url: https://gitlab.cern.ch/lhcb-dirac/{{ name }}/-/archive/v{{ major }}r{{ minor }}p{{ patch }}/LHCbDIRAC-v{{ major }}r{{ minor }}p{{ patch }}.tar.gz
@@ -14,7 +14,7 @@ source:
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script:
     - cp ${RECIPE_DIR}/setup.py .
     - {{ PYTHON }} -m pip install . --no-deps -vv
