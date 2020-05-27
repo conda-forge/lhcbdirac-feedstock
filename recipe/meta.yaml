@@ -14,7 +14,7 @@ source:
 
 build:
   noarch: python
-  number: 1
+  number: 2
   script:
     - cp ${RECIPE_DIR}/setup.py .
     - {{ PYTHON }} -m pip install . --no-deps -vv
@@ -34,6 +34,7 @@ requirements:
     - python-gfal2
     - lbplatformutils >=4.2.3
     - lbenv >=1.1.1
+    - uproot
 
 test:
   imports:
