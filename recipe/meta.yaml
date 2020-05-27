@@ -6,7 +6,7 @@
 
 package:
   name: {{ name|lower }}
-  version: {{ major }}.{{ minor }}.{{patch }}
+  version: {{ major }}.{{ minor }}.{{ patch }}
 
 source:
   url: https://gitlab.cern.ch/lhcb-dirac/{{ name }}/-/archive/v{{ major }}r{{ minor }}p{{ patch }}/LHCbDIRAC-v{{ major }}r{{ minor }}p{{ patch }}.tar.gz
