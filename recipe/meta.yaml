@@ -14,7 +14,7 @@ source:
 
 build:
   noarch: python
-  number: 2
+  number: 0
   script:
     - cp ${RECIPE_DIR}/setup.py .
     - {{ PYTHON }} -m pip install . --no-deps -vv
