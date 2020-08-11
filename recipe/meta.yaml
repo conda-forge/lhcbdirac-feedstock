@@ -1,5 +1,5 @@
 {% set name = "LHCbDIRAC" %}
-{% set version = "10r0p1" %}
+{% set version = "10r0p11" %}
 {% set major = version.split('r')[0] %}
 {% set minor = version.split('r')[1].split('p')[0] %}
 {% set patch = version.split('p')[1] %}
