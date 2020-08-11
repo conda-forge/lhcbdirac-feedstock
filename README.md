@@ -5,7 +5,7 @@ Home: https://lhcb-dirac.readthedocs.io/
 
 Package license: GPL-3.0-or-later
 
-Feedstock license: BSD 3-Clause
+Feedstock license: BSD-3-Clause
 
 Summary: LHCbDIRAC is the Extension to DIRAC for the LHCb Experiment
 
