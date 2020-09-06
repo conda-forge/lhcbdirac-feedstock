@@ -1,5 +1,5 @@
 {% set name = "LHCbDIRAC" %}
-{% set version = "10r0p1" %}
+{% set version = "10r0p11" %}
 {% set major = version.split('r')[0] %}
 {% set minor = version.split('r')[1].split('p')[0] %}
 {% set patch = version.split('p')[1] %}
@@ -10,11 +10,11 @@ package:
 
 source:
   url: https://gitlab.cern.ch/lhcb-dirac/{{ name }}/-/archive/v{{ major }}r{{ minor }}p{{ patch }}/LHCbDIRAC-v{{ major }}r{{ minor }}p{{ patch }}.tar.gz
-  sha256: 7eadf83c1c707b3826e763c0946004ea5bad9808b0519618382f3b267dcc7023
+  sha256: 79907fac3d4ffe4fd5fd71d60a5b285532ceb55555d4dbe4e1c0debd3365d140
 
 build:
   noarch: python
-  number: 2
+  number: 0
   script:
     - cp ${RECIPE_DIR}/setup.py .
     - {{ PYTHON }} -m pip install . --no-deps -vv
