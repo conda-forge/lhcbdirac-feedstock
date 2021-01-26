@@ -1,5 +1,5 @@
 {% set name = "LHCbDIRAC" %}
-{% set version = "10r0p15" %}
+{% set version = "10r1p1" %}
 {% set major = version.split('r')[0] %}
 {% set minor = version.split('r')[1].split('p')[0] %}
 {% set patch = version.split('p')[1] %}
@@ -9,8 +9,8 @@ package:
   version: {{ major }}.{{ minor }}.{{ patch }}
 
 source:
-  url: https://gitlab.cern.ch/lhcb-dirac/{{ name }}/-/archive/v{{ major }}r{{ minor }}p{{ patch }}/LHCbDIRAC-v{{ major }}r{{ minor }}p{{ patch }}.tar.gz
-  sha256: 31f7a17b14c5481d14a0d02958e4e72f9c05c472b4c6fe233f7c1ea3f7f9291a
+  url: https://gitlab.cern.ch/lhcb-dirac/{{ name }}/-/archive/v{{ version }}/LHCbDIRAC-v{{ version }}.tar.gz
+  sha256: 4a8a7d6f8f5ce31859e4fd4b68b5227d2b98934d05a413b12250f85223c3f6a0
 
 build:
   noarch: python
@@ -28,7 +28,7 @@ requirements:
     - pip
   run:
     - python =2.7
-    - dirac-grid =7.0
+    - dirac-grid =7.1
     - lhcbdirac-config
     - voms
     - python-gfal2
