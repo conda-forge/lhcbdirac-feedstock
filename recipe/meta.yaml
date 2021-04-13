@@ -125,7 +125,18 @@ build:
     - dirac-transformation-set-run-destination = LHCbDIRAC.TransformationSystem.scripts.dirac_transformation_set_run_destination:main
     - dirac-transformation-targets = LHCbDIRAC.TransformationSystem.scripts.dirac_transformation_targets:main
     - dirac-transformation-update-derived = LHCbDIRAC.TransformationSystem.scripts.dirac_transformation_update_derived:main
-  script: {{ PYTHON }} -m pip install . -vv
+  script:
+    - {{ PYTHON }} -m pip install . -vv
+    # Activation scripts
+    - mkdir -p "${PREFIX}/etc/conda/activate.d"
+    - cp "${RECIPE_DIR}/environment_scripts/activate.sh" "${PREFIX}/etc/conda/activate.d/activate-${PKG_NAME}.sh"
+    - cp "${RECIPE_DIR}/environment_scripts/activate.csh" "${PREFIX}/etc/conda/activate.d/activate-${PKG_NAME}.csh"
+    - cp "${RECIPE_DIR}/environment_scripts/activate.fish" "${PREFIX}/etc/conda/activate.d/activate-${PKG_NAME}.fish"
+    # Deactivation scripts
+    - mkdir -p "${PREFIX}/etc/conda/deactivate.d"
+    - cp "${RECIPE_DIR}/environment_scripts/deactivate.sh" "${PREFIX}/etc/conda/deactivate.d/deactivate-${PKG_NAME}.sh"
+    - cp "${RECIPE_DIR}/environment_scripts/deactivate.csh" "${PREFIX}/etc/conda/deactivate.d/deactivate-${PKG_NAME}.csh"
+    - cp "${RECIPE_DIR}/environment_scripts/deactivate.fish" "${PREFIX}/etc/conda/deactivate.d/deactivate-${PKG_NAME}.fish"
 
 requirements:
   host:
@@ -140,6 +151,7 @@ requirements:
     - six
     - uproot
     - xmltodict
+    - ca-policy-lcg
 
 test:
   imports:
@@ -193,7 +205,7 @@ test:
     - dirac-lhcb-mc-eventtype-info --help
     - dirac-loop --help
     - lhcb-CheckStalledService --help
-    - lhcb-proxy-init --help
+    # - lhcb-proxy-init --help
     - lhcb-restart-agent-service --help
     - dirac-dms-add-file --help
     - dirac-dms-add-transformation --help
