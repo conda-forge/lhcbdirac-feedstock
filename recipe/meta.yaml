@@ -133,7 +133,7 @@ requirements:
     - python >=3.9
   run:
     - awkward
-    - dirac >=7.2.14,<7.3
+    - dirac-grid >=7.2.14,<7.3
     - lbenv
     - lhcbdirac-config
     - lbplatformutils
