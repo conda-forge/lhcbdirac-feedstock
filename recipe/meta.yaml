@@ -1,5 +1,5 @@
 {% set name = "LHCbDIRAC" %}
-{% set version = "10.2.15" %}
+{% set version = "10.2.16" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/LHCbDIRAC-{{ version }}.tar.gz
-  sha256: 9d1488ef1d3d3d458455ed9281a6e95ad18e4f2cfa6a14f9c4164d6b72424d90
+  sha256: 3fdc9027141bf35ea33ebe285bd974b51e9f065913ba4d8e5de792db954baf3c
 
 build:
   number: 0
@@ -267,7 +267,7 @@ about:
   home: https://lhcb-dirac.readthedocs.io/
   license: GPL-3.0-or-later
   license_file: LICENSE
-  summary: 'LHCbDIRAC is the Extension to DIRAC for the LHCb Experiment'
+  summary: LHCbDIRAC is the Extension to DIRAC for the LHCb Experiment
   description: |
     DIRAC forms a layer between a particular community and various compute
     resources to allow optimized, transparent and reliable usage. LHCbDIRAC
