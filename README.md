@@ -1,22 +1,13 @@
 About lhcbdirac
 ===============
 
-Home: https://lhcb-dirac.readthedocs.io/
+Home: https://gitlab.cern.ch/lhcb-dirac/LHCbDIRAC/
 
-Package license: GPL-3.0-or-later
+Package license: GPL-3.0
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/lhcbdirac-feedstock/blob/master/LICENSE.txt)
 
-Summary: LHCbDIRAC is the Extension to DIRAC for the LHCb Experiment
-
-Development: https://gitlab.cern.ch/lhcb-dirac/LHCbDIRAC
-
-Documentation: https://lhcb-dirac.readthedocs.io/
-
-DIRAC forms a layer between a particular community and various compute
-resources to allow optimized, transparent and reliable usage. LHCbDIRAC
-specializes DIRAC for LHCb.
-
+Summary: LHCbDIRAC is the LHCb extension of DIRAC
 
 Current build status
 ====================

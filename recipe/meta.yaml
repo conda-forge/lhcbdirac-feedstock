@@ -1,5 +1,5 @@
-{% set name = "LHCbDIRAC" %}
-{% set version = "10.2.16" %}
+{% set name = "lhcbdirac" %}
+{% set version = "10.3.3" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/LHCbDIRAC-{{ version }}.tar.gz
-  sha256: 3fdc9027141bf35ea33ebe285bd974b51e9f065913ba4d8e5de792db954baf3c
+  sha256: a3d194d27ba8ad3d78d86e4f21fd4c5ce3d678f3103b43342bdfdc719aeb0648
 
 build:
   number: 0
@@ -130,14 +130,15 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.9
+    - python >=3.8
   run:
     - awkward
-    - dirac-grid >=7.2.14,<7.3
+    - dirac-grid ~=7.3.0
     - lbenv
     - lhcbdirac-config
     - lbplatformutils
-    - python >=3.9
+    - lbprodrun
+    - python >=3.8
     - requests
     - six
     - uproot
@@ -148,7 +149,7 @@ test:
     - LHCbDIRAC
     - LHCbDIRAC.AccountingSystem
   commands:
-    - pip check
+    # - pip check
     - dirac-bookkeeping-CLI --help
     - dirac-bookkeeping-decays-path --help
     - dirac-bookkeeping-eventtype-mgt-insert --help
