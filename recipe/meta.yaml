@@ -135,6 +135,7 @@ requirements:
     - awkward
     - dirac-grid ~=7.3.0
     - lbenv
+    - lhcbdirac-config
     - lbplatformutils
     - lbprodrun
     - python >=3.8
