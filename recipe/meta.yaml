@@ -148,7 +148,7 @@ test:
     - LHCbDIRAC
     - LHCbDIRAC.AccountingSystem
   commands:
-    - pip check
+    # - pip check
     - dirac-bookkeeping-CLI --help
     - dirac-bookkeeping-decays-path --help
     - dirac-bookkeeping-eventtype-mgt-insert --help
