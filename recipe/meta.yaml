@@ -57,13 +57,10 @@ build:
     - dirac-lhcb-get-root-guid = LHCbDIRAC.Core.scripts.dirac_lhcb_get_root_guid:main
     - dirac-lhcb-mc-eventtype-info = LHCbDIRAC.Core.scripts.dirac_lhcb_mc_eventtype_info:main
     - dirac-loop = LHCbDIRAC.Core.scripts.dirac_loop:main
-    - lhcb-CheckStalledService = LHCbDIRAC.Core.scripts.lhcb_CheckStalledService:main
     - lhcb-proxy-init = LHCbDIRAC.Core.scripts.lhcb_proxy_init:main
-    - lhcb-restart-agent-service = LHCbDIRAC.Core.scripts.lhcb_restart_agent_service:main
     - dirac-dms-add-file = LHCbDIRAC.DataManagementSystem.scripts.dirac_dms_add_file:main
     - dirac-dms-add-transformation = LHCbDIRAC.DataManagementSystem.scripts.dirac_dms_add_transformation:main
     - dirac-dms-check-bkk2fc = LHCbDIRAC.DataManagementSystem.scripts.dirac_dms_check_bkk2fc:main
-    - dirac-dms-check-directory-content = LHCbDIRAC.DataManagementSystem.scripts.dirac_dms_check_directory_content:main
     - dirac-dms-check-directory-integrity = LHCbDIRAC.DataManagementSystem.scripts.dirac_dms_check_directory_integrity:main
     - dirac-dms-check-fc2bkk = LHCbDIRAC.DataManagementSystem.scripts.dirac_dms_check_fc2bkk:main
     - dirac-dms-check-fc2se = LHCbDIRAC.DataManagementSystem.scripts.dirac_dms_check_fc2se:main
@@ -119,13 +116,11 @@ build:
     - dirac-transformation-clean = LHCbDIRAC.TransformationSystem.scripts.dirac_transformation_clean:main
     - dirac-transformation-debug = LHCbDIRAC.TransformationSystem.scripts.dirac_transformation_debug:main
     - dirac-transformation-flush-runs = LHCbDIRAC.TransformationSystem.scripts.dirac_transformation_flush_runs:main
-    - dirac-transformation-information = LHCbDIRAC.TransformationSystem.scripts.dirac_transformation_information:main
     - dirac-transformation-remove-files = LHCbDIRAC.TransformationSystem.scripts.dirac_transformation_remove_files:main
     - dirac-transformation-reset-files = LHCbDIRAC.TransformationSystem.scripts.dirac_transformation_reset_files:main
     - dirac-transformation-set-run-destination = LHCbDIRAC.TransformationSystem.scripts.dirac_transformation_set_run_destination:main
     - dirac-transformation-targets = LHCbDIRAC.TransformationSystem.scripts.dirac_transformation_targets:main
     - dirac-transformation-set-parameters = LHCbDIRAC.TransformationSystem.scripts.dirac_transformation_set_parameters:main
-    - dirac-transformation-update-derived = LHCbDIRAC.TransformationSystem.scripts.dirac_transformation_update_derived:main
   script: {{ PYTHON }} -m pip install . -vv
   number: 0
 
@@ -199,13 +194,10 @@ test:
     - dirac-lhcb-get-root-guid --help
     - dirac-lhcb-mc-eventtype-info --help
     - dirac-loop --help
-    - lhcb-CheckStalledService --help
     - lhcb-proxy-init --help
-    - lhcb-restart-agent-service --help
     - dirac-dms-add-file --help
     - dirac-dms-add-transformation --help
     - dirac-dms-check-bkk2fc --help
-    - dirac-dms-check-directory-content --help
     - dirac-dms-check-directory-integrity --help
     - dirac-dms-check-fc2bkk --help
     - dirac-dms-check-fc2se --help
@@ -261,13 +253,11 @@ test:
     - dirac-transformation-clean --help
     - dirac-transformation-debug --help
     - dirac-transformation-flush-runs --help
-    - dirac-transformation-information --help
     - dirac-transformation-remove-files --help
     - dirac-transformation-reset-files --help
     - dirac-transformation-set-run-destination --help
     - dirac-transformation-targets --help
     - dirac-transformation-set-parameters --help
-    - dirac-transformation-update-derived --help
   requires:
     - pip
 
