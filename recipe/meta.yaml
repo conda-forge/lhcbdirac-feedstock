@@ -194,7 +194,7 @@ test:
     - dirac-lhcb-get-root-guid --help
     - dirac-lhcb-mc-eventtype-info --help
     - dirac-loop --help
-    - lhcb-proxy-init --help
+    - X509_CERT_DIR=/tmp X509_VOMS_DIR=/tmp lhcb-proxy-init --help
     - dirac-dms-add-file --help
     - dirac-dms-add-transformation --help
     - dirac-dms-check-bkk2fc --help
