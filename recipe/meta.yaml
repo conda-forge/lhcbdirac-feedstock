@@ -105,6 +105,8 @@ build:
     - dirac-production-site-summary = LHCbDIRAC.Interfaces.scripts.dirac_production_site_summary:main
     - dirac-production-summary = LHCbDIRAC.Interfaces.scripts.dirac_production_summary:main
     - dirac-production-shifter = LHCbDIRAC.ProductionManagementSystem.scripts.dirac_production_shifter:main
+    - dirac-production-request-run-local = LHCbDIRAC.ProductionManagementSystem.scripts.dirac_production_request_run_local:main
+    - dirac-production-request-submit = LHCbDIRAC.ProductionManagementSystem.scripts.dirac_production_request_submit:main
     - dirac-production-check-ancestors = LHCbDIRAC.TransformationSystem.scripts.dirac_production_check_ancestors:main
     - dirac-production-check-descendants = LHCbDIRAC.TransformationSystem.scripts.dirac_production_check_descendants:main
     - dirac-production-remove-output = LHCbDIRAC.TransformationSystem.scripts.dirac_production_remove_output:main
@@ -122,6 +124,7 @@ build:
     - dirac-transformation-reset-files = LHCbDIRAC.TransformationSystem.scripts.dirac_transformation_reset_files:main
     - dirac-transformation-set-run-destination = LHCbDIRAC.TransformationSystem.scripts.dirac_transformation_set_run_destination:main
     - dirac-transformation-targets = LHCbDIRAC.TransformationSystem.scripts.dirac_transformation_targets:main
+    - dirac-transformation-set-parameters = LHCbDIRAC.TransformationSystem.scripts.dirac_transformation_set_parameters:main
     - dirac-transformation-update-derived = LHCbDIRAC.TransformationSystem.scripts.dirac_transformation_update_derived:main
   script: {{ PYTHON }} -m pip install . -vv
   number: 0
@@ -244,6 +247,8 @@ test:
     - dirac-production-site-summary --help
     - dirac-production-summary --help
     - dirac-production-shifter --help
+    - dirac-production-request-run-local --help
+    - dirac-production-request-submit --help
     - dirac-production-check-ancestors --help
     - dirac-production-check-descendants --help
     - dirac-production-remove-output --help
@@ -261,6 +266,7 @@ test:
     - dirac-transformation-reset-files --help
     - dirac-transformation-set-run-destination --help
     - dirac-transformation-targets --help
+    - dirac-transformation-set-parameters --help
     - dirac-transformation-update-derived --help
   requires:
     - pip
