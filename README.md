@@ -1,11 +1,11 @@
-About lhcbdirac
-===============
+About lhcbdirac-feedstock
+=========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/lhcbdirac-feedstock/blob/main/LICENSE.txt)
 
 Home: https://lhcb-dirac.readthedocs.io/
 
 Package license: GPL-3.0-or-later
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/lhcbdirac-feedstock/blob/main/LICENSE.txt)
 
 Summary: LHCbDIRAC is the Extension to DIRAC for the LHCb Experiment
 
