@@ -137,7 +137,7 @@ requirements:
     - lbcondawrappers
     - requests
     - six
-    - pydantic
+    - pydantic <2
     - uproot
     - pyyaml
     - awkward
