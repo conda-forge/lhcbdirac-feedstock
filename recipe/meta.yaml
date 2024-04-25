@@ -1,5 +1,5 @@
 {% set name = "lhcbdirac" %}
-{% set version = "11.0.39" %}
+{% set version = "11.0.40" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 38a8b12935ce6233d493263e195d03e50d3c4c3466a9ccd010fec84a06285f34
+  sha256: f676db974cafe5195102cd09dfff21e2228a4acdfa84d94aa0c91febf5b4df2e
 
 build:
   noarch: python
