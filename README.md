@@ -17,7 +17,6 @@ DIRAC forms a layer between a particular community and various compute
 resources to allow optimized, transparent and reliable usage. LHCbDIRAC
 specializes DIRAC for LHCb.
 
-
 Current build status
 ====================
 
