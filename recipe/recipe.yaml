@@ -130,13 +130,13 @@ build:
 
 requirements:
   host:
-    - python >=3.9
+    - python ${{ python_min }}
     - setuptools >=42
     - wheel
     - setuptools-scm >=3.4
     - pip
   run:
-    - python >=3.9
+    - python >=${{ python_min }}
     - dirac-grid >=8.0.0,<8.1.dev0
     - lbplatformutils >=4.4.0
     - lbenv
@@ -156,15 +156,14 @@ requirements:
     - numpy
 
 tests:
-  - python:
+  - requirements:
+      run:
+        - python ${{ python_min }}
+    python:
       imports:
         - LHCbDIRAC
         - LHCbDIRAC.AccountingSystem
-  - requirements:
-      run:
-        - pip
-    script:
-      - pip check
+  - script:
       - dirac-bookkeeping-CLI --help
       - dirac-bookkeeping-decays-path --help
       - dirac-bookkeeping-eventtype-mgt-insert --help
