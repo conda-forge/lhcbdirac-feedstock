@@ -1,13 +1,13 @@
 {% set name = "lhcbdirac" %}
-{% set version = "11.0.42" %}
+{% set version = "11.0.54" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 1232374642f19ca2649c83828b11b71b77ef2c8761fe32f08b3c58d97b201b96
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/lhcbdirac-{{ version }}.tar.gz
+  sha256: b691f1d4ac14286aead13fb74fd592ec8e2f335a46e592b29f27a7cd56d0bcd3
 
 build:
   noarch: python
@@ -127,21 +127,29 @@ build:
 requirements:
   host:
     - python >=3.9
+    - setuptools >=42
+    - wheel
+    - setuptools-scm >=3.4
     - pip
   run:
     - python >=3.9
     - dirac-grid >=8.0.0,<8.1.dev0
-    - lbplatformutils
+    - lbplatformutils >=4.4.0
     - lbenv
     - lbprodrun
     - lbcondawrappers
     - requests
     - six
-    - pydantic <2
+    - pydantic >=2
     - uproot
     - pyyaml
     - awkward
     - xmltodict
+    - rich
+    - beautifulsoup4
+    - python-gitlab
+    - pandas
+    - numpy
 
 test:
   imports:
