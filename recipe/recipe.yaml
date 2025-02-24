@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: lhcbdirac
-  version: "11.0.58"
+  version: "11.0.59"
   python_min: '3.11'
 
 package:
@@ -11,7 +11,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/lhcbdirac-${{ version }}.tar.gz
-  sha256: 80aa879ddf567d929771c68b9a1a73606145662400d43e14618f1a582393be92
+  sha256: 087d4bbd7d9c8345bce10302f4eba49f4d6ab63c13cf0dccc66b574620cfc6ef
 
 build:
   number: 0
